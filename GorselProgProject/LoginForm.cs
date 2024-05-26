@@ -52,7 +52,8 @@ namespace GorselProgProject
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string password = "";
+            string password = string.Empty;
+            
             try
             {   // SQL SERVER'a baglanti ve veri cekme
                 connection.Open();
@@ -65,21 +66,21 @@ namespace GorselProgProject
                     password = reader["password"].ToString();
 
                 }
-                if (password == textBoxPassword.Text)
+                //yanlis kullaci adi veya sifre de hata gösterimi
+                if (password == string.Empty || password != textBoxPassword.Text)
                 {
-
-                    MainForm mainForm = new MainForm();
-                    mainForm.ShowDialog();
-
-                }
-                else
-                {
-                    // yanlis kullaci adi veya sifre de hata gösterimi
+                  
                     MessageBox.Show("Invalid username or password!");
 
                     // textboxlarin bosaltilmasi
                     textBoxUser.Text = "";
                     textBoxPassword.Text = "";
+                }
+                else
+                {
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
+                    
                 }
 
 
@@ -94,6 +95,7 @@ namespace GorselProgProject
 
                 connection.Close();
             }
+            
 
         }
 

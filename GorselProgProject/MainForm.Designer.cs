@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             groupBoxMedicine = new GroupBox();
+            buttonDelete = new Button();
             checkBoxStock = new CheckBox();
             labelidd = new Label();
             labelStock = new Label();
@@ -61,6 +62,7 @@
             // groupBoxMedicine
             // 
             groupBoxMedicine.BackColor = SystemColors.ActiveCaption;
+            groupBoxMedicine.Controls.Add(buttonDelete);
             groupBoxMedicine.Controls.Add(checkBoxStock);
             groupBoxMedicine.Controls.Add(labelidd);
             groupBoxMedicine.Controls.Add(labelStock);
@@ -89,6 +91,15 @@
             groupBoxMedicine.TabStop = false;
             groupBoxMedicine.Text = "Control Panel";
             // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(310, 360);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(70, 23);
+            buttonDelete.TabIndex = 24;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = true;
+            // 
             // checkBoxStock
             // 
             checkBoxStock.AutoSize = true;
@@ -101,7 +112,7 @@
             // labelidd
             // 
             labelidd.AutoSize = true;
-            labelidd.Location = new Point(191, 31);
+            labelidd.Location = new Point(204, 31);
             labelidd.Name = "labelidd";
             labelidd.Size = new Size(17, 15);
             labelidd.TabIndex = 22;
@@ -153,7 +164,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(159, 309);
+            dateTimePicker1.Location = new Point(159, 317);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(196, 23);
             dateTimePicker1.TabIndex = 15;
@@ -188,18 +199,19 @@
             // 
             // buttonUpdate
             // 
-            buttonUpdate.Location = new Point(259, 348);
+            buttonUpdate.Location = new Point(225, 360);
             buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(96, 23);
+            buttonUpdate.Size = new Size(70, 23);
             buttonUpdate.TabIndex = 9;
-            buttonUpdate.Text = "Update/Edit";
+            buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = true;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(159, 348);
+            buttonAdd.Location = new Point(138, 360);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.Size = new Size(70, 23);
             buttonAdd.TabIndex = 8;
             buttonAdd.Text = "Add ";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -280,6 +292,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 19);
@@ -287,6 +300,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(783, 439);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // MainForm
             // 
@@ -332,5 +346,6 @@
         private Label labelStock;
         private Label labelidd;
         private CheckBox checkBoxStock;
+        private Button buttonDelete;
     }
 }
