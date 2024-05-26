@@ -17,9 +17,10 @@ namespace GorselProgProject
             labelUser.Text = "Username :";
             labelPassword.Text = "Password :";
             linkLabelReset.Text = "Forgot your password ?";
+            labelVersion.Text = "v2.5565";
 
-           
-            
+
+
 
 
         }
@@ -51,24 +52,24 @@ namespace GorselProgProject
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string password="";
+            string password = "";
             try
             {   // SQL SERVER'a baglanti ve veri cekme
                 connection.Open();
-                SqlCommand sqlCommand = new SqlCommand("SELECT Password FROM Table_DepoAdmins WHERE UserName =@p1",connection);
-                sqlCommand.Parameters.AddWithValue("@p1",textBoxUser.Text);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Password FROM Table_DepoAdmins WHERE UserName =@p1", connection);
+                sqlCommand.Parameters.AddWithValue("@p1", textBoxUser.Text);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
-                
-                while(reader.Read())
+
+                while (reader.Read())
                 {
                     password = reader["password"].ToString();
-                    
+
                 }
                 if (password == textBoxPassword.Text)
                 {
-                   
-                   MainForm mainForm = new MainForm();  
-                   mainForm.ShowDialog();
+
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
 
                 }
                 else
@@ -80,19 +81,23 @@ namespace GorselProgProject
                     textBoxUser.Text = "";
                     textBoxPassword.Text = "";
                 }
-             
+
 
             }
-            catch(Exception ex) { 
-            
+            catch (Exception ex)
+            {
+
                 MessageBox.Show($"Connection error! {ex.Message}");
             }
-            finally { 
-            
-                 connection.Close();
+            finally
+            {
+
+                connection.Close();
             }
-            
+
         }
+
+        
     }
 }
     

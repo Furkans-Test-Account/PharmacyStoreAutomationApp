@@ -39,6 +39,7 @@
             textBoxPassword = new TextBox();
             linkLabelReset = new LinkLabel();
             labelH2 = new Label();
+            labelVersion = new Label();
             SuspendLayout();
             // 
             // buttonLogin
@@ -113,6 +114,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(100, 23);
             textBoxPassword.TabIndex = 7;
+            textBoxPassword.UseSystemPasswordChar = true;
             // 
             // linkLabelReset
             // 
@@ -135,11 +137,22 @@
             labelH2.TabIndex = 9;
             labelH2.Text = "label3";
             // 
+            // labelVersion
+            // 
+            labelVersion.AutoSize = true;
+            labelVersion.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            labelVersion.Location = new Point(233, 426);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new Size(44, 15);
+            labelVersion.TabIndex = 10;
+            labelVersion.Text = "version";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelVersion);
             Controls.Add(labelDate);
             Controls.Add(labelH2);
             Controls.Add(linkLabelReset);
@@ -152,7 +165,7 @@
             Controls.Add(buttonLogin);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginForm";
-            Text = "Medicine Depot";
+            Text = "Pharmacy Application";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,5 +182,6 @@
         private LinkLabel linkLabelReset;
         private Label labelDate;
         private Label labelH2;
+        private Label labelVersion;
     }
 }

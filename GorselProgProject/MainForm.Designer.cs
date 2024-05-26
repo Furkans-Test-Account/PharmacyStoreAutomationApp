@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             groupBoxMedicine = new GroupBox();
+            checkBoxStock = new CheckBox();
             labelidd = new Label();
-            textBox6 = new TextBox();
             labelStock = new Label();
             labelOrder = new Label();
             buttonOrder = new Button();
-            textBox1 = new TextBox();
+            textBoxOwner = new TextBox();
             labelOwner = new Label();
             dateTimePicker1 = new DateTimePicker();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxPrice = new TextBox();
+            textBoxPlace = new TextBox();
+            textBoxName = new TextBox();
+            textBoxNumber = new TextBox();
             buttonUpdate = new Button();
             buttonAdd = new Button();
             labelPrice = new Label();
@@ -61,18 +61,18 @@
             // groupBoxMedicine
             // 
             groupBoxMedicine.BackColor = SystemColors.ActiveCaption;
+            groupBoxMedicine.Controls.Add(checkBoxStock);
             groupBoxMedicine.Controls.Add(labelidd);
-            groupBoxMedicine.Controls.Add(textBox6);
             groupBoxMedicine.Controls.Add(labelStock);
             groupBoxMedicine.Controls.Add(labelOrder);
             groupBoxMedicine.Controls.Add(buttonOrder);
-            groupBoxMedicine.Controls.Add(textBox1);
+            groupBoxMedicine.Controls.Add(textBoxOwner);
             groupBoxMedicine.Controls.Add(labelOwner);
             groupBoxMedicine.Controls.Add(dateTimePicker1);
-            groupBoxMedicine.Controls.Add(textBox5);
-            groupBoxMedicine.Controls.Add(textBox4);
-            groupBoxMedicine.Controls.Add(textBox3);
-            groupBoxMedicine.Controls.Add(textBox2);
+            groupBoxMedicine.Controls.Add(textBoxPrice);
+            groupBoxMedicine.Controls.Add(textBoxPlace);
+            groupBoxMedicine.Controls.Add(textBoxName);
+            groupBoxMedicine.Controls.Add(textBoxNumber);
             groupBoxMedicine.Controls.Add(buttonUpdate);
             groupBoxMedicine.Controls.Add(buttonAdd);
             groupBoxMedicine.Controls.Add(labelPrice);
@@ -89,6 +89,15 @@
             groupBoxMedicine.TabStop = false;
             groupBoxMedicine.Text = "Control Panel";
             // 
+            // checkBoxStock
+            // 
+            checkBoxStock.AutoSize = true;
+            checkBoxStock.Location = new Point(243, 277);
+            checkBoxStock.Name = "checkBoxStock";
+            checkBoxStock.Size = new Size(15, 14);
+            checkBoxStock.TabIndex = 23;
+            checkBoxStock.UseVisualStyleBackColor = true;
+            // 
             // labelidd
             // 
             labelidd.AutoSize = true;
@@ -97,13 +106,6 @@
             labelidd.Size = new Size(17, 15);
             labelidd.TabIndex = 22;
             labelidd.Text = "id";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(204, 274);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 21;
             // 
             // labelStock
             // 
@@ -133,12 +135,12 @@
             buttonOrder.UseVisualStyleBackColor = true;
             buttonOrder.Click += buttonOrder_Click;
             // 
-            // textBox1
+            // textBoxOwner
             // 
-            textBox1.Location = new Point(204, 154);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 17;
+            textBoxOwner.Location = new Point(204, 154);
+            textBoxOwner.Name = "textBoxOwner";
+            textBoxOwner.Size = new Size(100, 23);
+            textBoxOwner.TabIndex = 17;
             // 
             // labelOwner
             // 
@@ -156,33 +158,33 @@
             dateTimePicker1.Size = new Size(196, 23);
             dateTimePicker1.TabIndex = 15;
             // 
-            // textBox5
+            // textBoxPrice
             // 
-            textBox5.Location = new Point(204, 230);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 14;
+            textBoxPrice.Location = new Point(204, 230);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.Size = new Size(100, 23);
+            textBoxPrice.TabIndex = 14;
             // 
-            // textBox4
+            // textBoxPlace
             // 
-            textBox4.Location = new Point(204, 194);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 13;
+            textBoxPlace.Location = new Point(204, 194);
+            textBoxPlace.Name = "textBoxPlace";
+            textBoxPlace.Size = new Size(100, 23);
+            textBoxPlace.TabIndex = 13;
             // 
-            // textBox3
+            // textBoxName
             // 
-            textBox3.Location = new Point(204, 69);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 12;
+            textBoxName.Location = new Point(204, 69);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(100, 23);
+            textBoxName.TabIndex = 12;
             // 
-            // textBox2
+            // textBoxNumber
             // 
-            textBox2.Location = new Point(204, 111);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 11;
+            textBoxNumber.Location = new Point(204, 111);
+            textBoxNumber.Name = "textBoxNumber";
+            textBoxNumber.Size = new Size(100, 23);
+            textBoxNumber.TabIndex = 11;
             // 
             // buttonUpdate
             // 
@@ -201,6 +203,7 @@
             buttonAdd.TabIndex = 8;
             buttonAdd.Text = "Add ";
             buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // labelPrice
             // 
@@ -270,7 +273,7 @@
             groupBoxDepo.Controls.Add(dataGridView1);
             groupBoxDepo.Location = new Point(406, 1);
             groupBoxDepo.Name = "groupBoxDepo";
-            groupBoxDepo.Size = new Size(414, 461);
+            groupBoxDepo.Size = new Size(789, 461);
             groupBoxDepo.TabIndex = 2;
             groupBoxDepo.TabStop = false;
             groupBoxDepo.Text = "Depot";
@@ -282,14 +285,14 @@
             dataGridView1.Location = new Point(3, 19);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(408, 439);
+            dataGridView1.Size = new Size(783, 439);
             dataGridView1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 466);
+            ClientSize = new Size(1193, 472);
             Controls.Add(groupBoxDepo);
             Controls.Add(groupBoxMedicine);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -315,19 +318,19 @@
         private Label labelLicenseNo;
         private Label labelName;
         private Label labeliD;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox textBoxPrice;
+        private TextBox textBoxPlace;
+        private TextBox textBoxName;
+        private TextBox textBoxNumber;
         private Button buttonUpdate;
         private Button buttonAdd;
-        private TextBox textBox1;
+        private TextBox textBoxOwner;
         private Label labelOwner;
         private DateTimePicker dateTimePicker1;
         private Label labelOrder;
         private Button buttonOrder;
-        private TextBox textBox6;
         private Label labelStock;
         private Label labelidd;
+        private CheckBox checkBoxStock;
     }
 }
