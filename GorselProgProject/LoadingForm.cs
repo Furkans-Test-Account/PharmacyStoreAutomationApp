@@ -16,7 +16,7 @@ namespace GorselProgProject
         {
             InitializeComponent();
 
-            labelLoading.Text = "Saving/Updating...";
+            labelLoading.Text = "Saving/Updating/Deleting...";
             timer1.Start();
 
         }
@@ -31,7 +31,7 @@ namespace GorselProgProject
             else
             {
                 timer1.Stop();
-                MessageBox.Show("Success!");
+                MessageBox.Show("Action successful!");
                 this.Close();
             }
         }

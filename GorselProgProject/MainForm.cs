@@ -124,8 +124,11 @@ namespace GorselProgProject
                 SqlCmd.Parameters.AddWithValue("@P7", Convert.ToBoolean(checkBoxStock.Checked));
                 SqlCmd.Parameters.AddWithValue("@P8", labeliD.Text);
                 SqlCmd.ExecuteNonQuery();
+
+                LoadingForm loadingForm = new LoadingForm();
+                loadingForm.ShowDialog();
             }
-            catch(Exception ex)  
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error updating :{ex.Message}");
             }
@@ -136,6 +139,34 @@ namespace GorselProgProject
 
             DisplayData();
 
+        }
+
+
+        // DELETE BUTTON
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                // SQL komutu ile secilen ilaci silme 
+                SqlCommand SqlCmd = new SqlCommand("DELETE FROM Table_Medicines WHERE  ID =@P1", connection);               
+                SqlCmd.Parameters.AddWithValue("@P1", labeliD.Text);
+                SqlCmd.ExecuteNonQuery();
+
+                LoadingForm loadingForm = new LoadingForm();
+                loadingForm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting :{ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            DisplayData();
         }
     }
 }

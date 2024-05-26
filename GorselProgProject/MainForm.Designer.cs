@@ -99,6 +99,7 @@
             buttonDelete.TabIndex = 24;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // checkBoxStock
             // 

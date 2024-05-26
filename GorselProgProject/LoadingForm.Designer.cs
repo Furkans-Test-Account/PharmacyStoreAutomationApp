@@ -37,7 +37,7 @@
             // labelLoading
             // 
             labelLoading.AutoSize = true;
-            labelLoading.Location = new Point(67, 26);
+            labelLoading.Location = new Point(27, 22);
             labelLoading.Name = "labelLoading";
             labelLoading.Size = new Size(38, 15);
             labelLoading.TabIndex = 0;
