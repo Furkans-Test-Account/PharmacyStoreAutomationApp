@@ -23,6 +23,7 @@ namespace GorselProgProject
 
 
 
+
         }
         // SQL server baglanti
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-F3JACGL\SQLEXPRESS;Initial Catalog=DB_MedicineDepot;Integrated Security=True;");
@@ -53,6 +54,7 @@ namespace GorselProgProject
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string password = string.Empty;
+
             
             try
             {   // SQL SERVER'a baglanti ve veri cekme
@@ -69,7 +71,7 @@ namespace GorselProgProject
                 //yanlis kullaci adi veya sifre de hata gösterimi
                 if (password == string.Empty || password != textBoxPassword.Text)
                 {
-                  
+
                     MessageBox.Show("Invalid username or password!");
 
                     // textboxlarin bosaltilmasi
@@ -80,7 +82,8 @@ namespace GorselProgProject
                 {
                     MainForm mainForm = new MainForm();
                     mainForm.ShowDialog();
-                    
+                    this.Close();
+
                 }
 
 
@@ -95,11 +98,12 @@ namespace GorselProgProject
 
                 connection.Close();
             }
-            
+
+
 
         }
 
-        
+      
     }
 }
     

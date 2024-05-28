@@ -29,87 +29,133 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            labelChoice = new Label();
+            richTextBoxMail = new RichTextBox();
+            comboBoxList = new ComboBox();
+            labelCity = new Label();
+            listBoxCity = new ListBox();
+            buttonSend = new Button();
+            groupBoxRight = new GroupBox();
+            groupBoxLeft = new GroupBox();
+            textBoxSearch = new TextBox();
+            groupBoxRight.SuspendLayout();
+            groupBoxLeft.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // labelChoice
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(50, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            labelChoice.AutoSize = true;
+            labelChoice.Location = new Point(6, 47);
+            labelChoice.Name = "labelChoice";
+            labelChoice.Size = new Size(63, 15);
+            labelChoice.TabIndex = 2;
+            labelChoice.Text = "Complaint";
             // 
-            // label2
+            // richTextBoxMail
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(50, 157);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
+            richTextBoxMail.Location = new Point(37, 30);
+            richTextBoxMail.Name = "richTextBoxMail";
+            richTextBoxMail.Size = new Size(404, 260);
+            richTextBoxMail.TabIndex = 6;
+            richTextBoxMail.Text = "";
             // 
-            // label3
+            // comboBoxList
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(50, 94);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
+            comboBoxList.FormattingEnabled = true;
+            comboBoxList.Location = new Point(190, 47);
+            comboBoxList.Name = "comboBoxList";
+            comboBoxList.Size = new Size(121, 23);
+            comboBoxList.TabIndex = 7;
             // 
-            // textBox1
+            // labelCity
             // 
-            textBox1.Location = new Point(164, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
+            labelCity.AutoSize = true;
+            labelCity.Location = new Point(6, 122);
+            labelCity.Name = "labelCity";
+            labelCity.Size = new Size(28, 15);
+            labelCity.TabIndex = 8;
+            labelCity.Text = "City";
             // 
-            // textBox2
+            // listBoxCity
             // 
-            textBox2.Location = new Point(164, 107);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
+            listBoxCity.FormattingEnabled = true;
+            listBoxCity.ItemHeight = 15;
+            listBoxCity.Location = new Point(190, 122);
+            listBoxCity.Name = "listBoxCity";
+            listBoxCity.Size = new Size(120, 94);
+            listBoxCity.TabIndex = 9;
             // 
-            // textBox3
+            // buttonSend
             // 
-            textBox3.Location = new Point(164, 157);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 5;
+            buttonSend.Location = new Point(366, 321);
+            buttonSend.Name = "buttonSend";
+            buttonSend.Size = new Size(75, 23);
+            buttonSend.TabIndex = 10;
+            buttonSend.Text = "Send";
+            buttonSend.UseVisualStyleBackColor = true;
+            buttonSend.Click += buttonSend_Click;
+            // 
+            // groupBoxRight
+            // 
+            groupBoxRight.BackColor = Color.Wheat;
+            groupBoxRight.Controls.Add(richTextBoxMail);
+            groupBoxRight.Controls.Add(buttonSend);
+            groupBoxRight.Location = new Point(334, 8);
+            groupBoxRight.Name = "groupBoxRight";
+            groupBoxRight.Size = new Size(461, 439);
+            groupBoxRight.TabIndex = 12;
+            groupBoxRight.TabStop = false;
+            groupBoxRight.Text = "groupBoxRight";
+            // 
+            // groupBoxLeft
+            // 
+            groupBoxLeft.BackColor = SystemColors.ActiveCaption;
+            groupBoxLeft.Controls.Add(textBoxSearch);
+            groupBoxLeft.Controls.Add(labelChoice);
+            groupBoxLeft.Controls.Add(labelCity);
+            groupBoxLeft.Controls.Add(comboBoxList);
+            groupBoxLeft.Controls.Add(listBoxCity);
+            groupBoxLeft.Location = new Point(0, 8);
+            groupBoxLeft.Name = "groupBoxLeft";
+            groupBoxLeft.Size = new Size(328, 439);
+            groupBoxLeft.TabIndex = 13;
+            groupBoxLeft.TabStop = false;
+            groupBoxLeft.Text = "groupBoxLeft";
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Location = new Point(90, 122);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(74, 23);
+            textBoxSearch.TabIndex = 13;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // OrderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(groupBoxLeft);
+            Controls.Add(groupBoxRight);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "OrderForm";
             Text = "Order Form";
+            Load += OrderForm_Load_1;
+            groupBoxRight.ResumeLayout(false);
+            groupBoxLeft.ResumeLayout(false);
+            groupBoxLeft.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label labelChoice;
+        private RichTextBox richTextBoxMail;
+        private ComboBox comboBoxList;
+        private Label labelCity;
+        private ListBox listBoxCity;
+        private Button buttonSend;
+        private GroupBox groupBoxRight;
+        private GroupBox groupBoxLeft;
+        private TextBox textBoxSearch;
     }
 }

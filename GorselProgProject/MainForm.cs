@@ -29,7 +29,7 @@ namespace GorselProgProject
 
         }
 
-        // Verileri ekleme-gosterme metodu
+        // DATA GRIDVIEW icin verileri ekleme-gosterme metodu
         private void DisplayData()
         {
             // SQL  komutuyla db' deki tablodaki verileri gridview da gosterme
@@ -40,8 +40,25 @@ namespace GorselProgProject
             dataGridView1.DataSource = dt;
         }
 
+        // Tiklanan bloktan verileri cekme
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // tiklanan satirin verilerini getirme (null gelemez)
+            int selectedRow = dataGridView1.SelectedCells[0].RowIndex;
+            labeliD.Text = dataGridView1.Rows[selectedRow].Cells[0].Value.ToString();
+            textBoxName.Text = dataGridView1.Rows[selectedRow].Cells[1].Value.ToString();
+            textBoxNumber.Text = dataGridView1.Rows[selectedRow].Cells[2].Value.ToString();
+            textBoxOwner.Text = dataGridView1.Rows[selectedRow].Cells[3].Value.ToString();
+            textBoxPlace.Text = dataGridView1.Rows[selectedRow].Cells[4].Value.ToString();
+            textBoxPrice.Text = dataGridView1.Rows[selectedRow].Cells[5].Value.ToString();
+            //  value type date olmali
+            dateTimePicker1.Value = (DateTime)dataGridView1.Rows[selectedRow].Cells[6].Value;
+            //  value  type bool olmali
+            checkBoxStock.Checked = Convert.ToBoolean(dataGridView1.Rows[selectedRow].Cells[5].Value);
+        }
 
-        // BUTTON ADD
+
+        // EKLEME BUTONU
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             try
@@ -58,7 +75,7 @@ namespace GorselProgProject
                 SqlCmd.Parameters.AddWithValue("@P7", Convert.ToBoolean(checkBoxStock.Checked));
                 SqlCmd.ExecuteNonQuery();
 
-                // metot cagirma
+                // display metodunu cagirarak datagridview da yeni verileri gosterme
                 DisplayData();
 
                 LoadingForm loadingForm = new LoadingForm();
@@ -89,22 +106,7 @@ namespace GorselProgProject
         }
 
 
-        // DATA GRIDVIEW 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // tiklanan satirin verilerini getirme (null gelemez)
-            int selectedRow = dataGridView1.SelectedCells[0].RowIndex;
-            labeliD.Text = dataGridView1.Rows[selectedRow].Cells[0].Value.ToString();
-            textBoxName.Text = dataGridView1.Rows[selectedRow].Cells[1].Value.ToString();
-            textBoxNumber.Text = dataGridView1.Rows[selectedRow].Cells[2].Value.ToString();
-            textBoxOwner.Text = dataGridView1.Rows[selectedRow].Cells[3].Value.ToString();
-            textBoxPlace.Text = dataGridView1.Rows[selectedRow].Cells[4].Value.ToString();
-            textBoxPrice.Text = dataGridView1.Rows[selectedRow].Cells[5].Value.ToString();
-            // return value date olmali
-            dateTimePicker1.Value = (DateTime)dataGridView1.Rows[selectedRow].Cells[6].Value;
-            //return value bool olmali
-            checkBoxStock.Checked = Convert.ToBoolean(dataGridView1.Rows[selectedRow].Cells[5].Value);
-        }
+
 
 
         // Guncelleme icin  gereken sql query komutlari  
