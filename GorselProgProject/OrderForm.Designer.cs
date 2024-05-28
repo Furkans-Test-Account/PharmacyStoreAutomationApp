@@ -105,7 +105,7 @@
             groupBoxRight.Size = new Size(461, 439);
             groupBoxRight.TabIndex = 12;
             groupBoxRight.TabStop = false;
-            groupBoxRight.Text = "groupBoxRight";
+            groupBoxRight.Text = "Mail";
             // 
             // groupBoxLeft
             // 
@@ -120,7 +120,6 @@
             groupBoxLeft.Size = new Size(328, 439);
             groupBoxLeft.TabIndex = 13;
             groupBoxLeft.TabStop = false;
-            groupBoxLeft.Text = "groupBoxLeft";
             // 
             // textBoxSearch
             // 

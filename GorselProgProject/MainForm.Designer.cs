@@ -131,19 +131,19 @@
             // labelOrder
             // 
             labelOrder.AutoSize = true;
-            labelOrder.Location = new Point(23, 407);
+            labelOrder.Location = new Point(15, 411);
             labelOrder.Name = "labelOrder";
-            labelOrder.Size = new Size(95, 15);
+            labelOrder.Size = new Size(112, 15);
             labelOrder.TabIndex = 19;
-            labelOrder.Text = "Order Medicine :";
+            labelOrder.Text = "I have complaints!  :";
             // 
             // buttonOrder
             // 
-            buttonOrder.Location = new Point(159, 403);
+            buttonOrder.Location = new Point(159, 407);
             buttonOrder.Name = "buttonOrder";
-            buttonOrder.Size = new Size(75, 23);
+            buttonOrder.Size = new Size(90, 23);
             buttonOrder.TabIndex = 18;
-            buttonOrder.Text = "Order Now";
+            buttonOrder.Text = "Send us mail!";
             buttonOrder.UseVisualStyleBackColor = true;
             buttonOrder.Click += buttonOrder_Click;
             // 
